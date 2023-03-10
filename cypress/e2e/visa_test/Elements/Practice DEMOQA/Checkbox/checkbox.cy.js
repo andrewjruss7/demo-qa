@@ -31,6 +31,7 @@ describe('Test checkbox', () => {
 
 
         checkBox.getCheckbox();
+        
         checkBox.getExpand();
         checkBox.getExpandAll()
         
