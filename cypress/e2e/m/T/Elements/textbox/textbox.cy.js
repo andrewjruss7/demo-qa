@@ -13,7 +13,6 @@ describe('test01', () =>{
 
         const text = new TextboxPO () ;
 
-        cy.wait(5000)
         text.buttonElemen().click();
         text.buttontextb().click();
         text.completeName().type("ivonne").should("have.value", "ivonne");
