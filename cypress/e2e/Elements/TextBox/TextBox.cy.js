@@ -31,7 +31,7 @@ describe("List-group Browser",  () => {
 
         textBox.labelUserNameMtd().contains('Name:'+fakeName);
         textBox.labelUserEmailMtd().contains('Email:'+fakeEmail);
-        textBox.labelCurrentAddressMtd().contains('Current Address:'+fakeAddress);
+        textBox.labelCurrentAddressMtd().contains('Current Address:'+fakeAddress); // Aquí tienes el error Mari.
         textBox.labelPermanentAddressMtd().contains('Permanent Address:'+fakeAddress);
     })
 })
