@@ -28,4 +28,7 @@ describe('test01', () => {
             cy.get('#currentAddress').should('be.visible'),
             cy.get('#permanentAddress').should('be.visible')
     })
-})
+}) 
+
+// Busca en Chatgpt3 como identar el codigo en visual studio code en ubuntu. Identar es organizar el codigo.
+// Se te revento 💩
