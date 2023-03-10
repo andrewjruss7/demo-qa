@@ -22,3 +22,5 @@ describe("Prueba de texto", ()=>{
         cy.get("#name").should("be.visible") // Organizar los asserts desde el PO.       
     })  
 })
+
+// Viva España
