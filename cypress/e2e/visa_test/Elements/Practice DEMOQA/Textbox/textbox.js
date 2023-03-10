@@ -39,17 +39,6 @@ class Textbox
 
     }
 
-    assertion()
-    {
-
-        cy.get('#name').should('be.visible')
-        cy.get('#email').should('be.visible')
-        cy.get('#currentAddress').should('be.visible')
-        cy.get('#permanentAddress').should('be.visible')
-
-        
-    }
-
 
 }
 
