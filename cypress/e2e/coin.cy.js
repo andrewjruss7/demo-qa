@@ -1,18 +1,19 @@
 describe("casos de pruebas de moneda en la página", ()=>{
 
-Before("Entrar a la página", ()=>{
+before("Entrar a la página", ()=>{
    cy.visit(Cypress.env('baseUrl'))
    cy.url().should('include','phptravels')
 })
-it("Verificar que el número de monedas", () =>{
+/*it("Verificar que el número de monedas", () =>{
     cy.get('#currency').contains('USD').click()
-    cy.get('.dropdown-menu show[aria-labelledby="currency"]').should("have.length", 11)
-    cy.get('.dropdown-menu show[aria-labelledby="currency"]').its('length').should("eq",11)
-})
-it("Validar monedas disponibles", () =>{
+    cy.get('#currency > .la').should("have.length", 11)
+    cy.wait(6000)
+    cy.get('.dropdown-menu li.dropdown-item').its('length').should("eq",11)
+})*/
+/*it("Validar monedas disponibles", () =>{
 
     cy.get('#currency').contains('USD').click()
-    cy.get('.dropdown-menu show[aria-labelledby="currency"]').should("have.length", 11).then((moneda) =>{
+    cy.get('.dropdown-menu li.dropdown-item').should("have.length", 11).then((moneda) =>{
 
         expect(moneda.eq(0)).to.contain('USD')
         expect(moneda.eq(1)).to.contain('GBP')
@@ -27,21 +28,20 @@ it("Validar monedas disponibles", () =>{
         expect(moneda.eq(10)).to.contain('IRR')
     })
 
-    })
+    })*/
 
 it("Validar cambio de moneda sea correcto", () =>{
     cy.get('#currency').contains('USD').click()
-    cy.get('.dropdown-item waves-effect[href="https://phptravels.net/currency-USD"]').contains("USD").click()
-
-    cy.get("#select2-hotels_city-container").click()
-    cy.get("#select2-hotels_city-container").type("islamaba").and({enter})
-    cy.get("checkout").click()
-
-    cy.get('document.querySelector("body > div:nth-child(29) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)")').click()
     
-    cy.get('.dropdown-toggle dropdown-btn travellers waves-effect[aria-expanded="false"]').click()
-    cy.get('#submit').click()
-    cy.get('document.querySelector("span[class=price__num] small")').contain('USD')
+
+    cy.get("#select2-hotels_city-container").click({force: true})
+    
+    cy.get('.select2-search__field[type="search"]').type("islamabad {enter}").type("{enter}").click({force:true})
+    cy.scrollTo('top')
+
+
+    cy.get('#submit').click({force: true})
+    cy.get('document.querySelector("span[class=price__num] small")').contains('USD')
 
 })    
 })

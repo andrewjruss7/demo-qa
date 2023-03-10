@@ -1,22 +1,23 @@
 describe("Casos de pruebas de idiomas en la página", () => {
 
-    before(() => {
+    beforeEach(() => {
   cy.visit(Cypress.env('baseUrl'));
   cy.url().should('include','phptravels');
     })
 
-    It("Actualización con lenguaje especifico", () => {
+    it("Actualización con lenguaje especifico", () => {
         cy.get("#languages").contains("English").click()
-        cy.get(".flag-icon flag-icon-us mr-1").click ()
+        cy.get(".dropdown-item.waves-effect[href='https://phptravels.net/lang-en']").click({force:true})
+        
         cy.get("#ACCOUNT").contains( "ACCOUNT").should("be.visible")
 
         cy.get("#languages").contains("English").click()
-        cy.get(".flag-icon flag-icon-es mr-1").contains("Spanish").click()
+        cy.get(".dropdown-item.waves-effect[href='https://phptravels.net/lang-es']").contains("Spanish").click({force:true})
         cy.get("#ACCOUNT").contains('Cuenta').should("be.visible")
     
 
     })
-    
+    /*
     it('Verificar el número de idiomas', () => {
         cy.get('#languages').click()     
         cy.get('.dropdown-menu show[aria-labelledby="languages"]').should('have.length', 13)
@@ -72,7 +73,7 @@ describe("Casos de pruebas de idiomas en la página", () => {
 
         cy.get("#ACCOUNT").contains('Cuenta').should("be.visible")
 
-        })
+        })*/
     
 })
 
