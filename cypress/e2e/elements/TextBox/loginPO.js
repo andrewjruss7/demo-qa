@@ -29,6 +29,10 @@ class LoginPO {
         const button = cy.get('[id=submit]')
         button.click({ force: true })
     }
+    provee(value) {
+        const name= cy.get("#name")
+        name.should("be.visible") 
+    }
 }
 
 export default LoginPO
