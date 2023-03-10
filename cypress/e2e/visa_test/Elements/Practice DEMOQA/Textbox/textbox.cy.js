@@ -71,6 +71,3 @@ describe('Test Textbox', () => {
      
 >>>>>>> 210106c1f41a9a9f63acdd5fb16dd28f7551b914
     })
-})
-
-// Me voy a ir a vivir a Canadá
