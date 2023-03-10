@@ -10,33 +10,36 @@ describe('Test Textbox', () => {
 
         cy.get('#item-0').click()
 
-
+        
 
 
     })
 
     
 
+
     it('Textbox test', () => {
 
-        Cypress.on('uncaught:exception', (err, runnable) => {
-             return false
-         })
-     
-         cy.fixture('textBoxData.json').as("userData")
-     
-         const inputText = new Textbox() ; // Cambia el nombre de la variable para tener buenas prácticas semánticas
-         inputText.inputFullName(this.userData.name)
-         inputText.inputEmail(this.userData.email)
-         inputText.inputCurrentAddress(this.userData.address)
-         inputText.inputPermanentAddress(this.userData.padress)
-         inputText.submitBtn()
-     
-         cy.get('#name').should('be.visible')
-         cy.get('#email').should('be.visible')
-         cy.get('#currentAddress').should('be.visible')
-         cy.get('#permanentAddress').should('be.visible')
-     
-     })
-     
+       Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
+
+        cy.fixture('textBoxData.json').as('userData')
+        console.log('userData')
+
+     const inputText = new Textbox() ; // Debes cambiar el nombre de la variable, para tener buenas practicas en la semantica. 
+            inputText.inputFullName(this.userData.name)      // Agrega estos valores desde el fixture
+            inputText.inputEmail(this.userData.email)          
+            inputText.inputCurrentAddress(this.userData.address)          
+            inputText.inputPermanentAddress(this.userData.padress)           
+            inputText.submitBtn()
+            
+            cy.get('#name').should('be.visible')
+            cy.get('#email').should('be.visible')
+            cy.get('#currentAddress').should('be.visible')
+            cy.get('#permanentAddress').should('be.visible')
+    
     })
+})
+
+// Me voy a ir a vivir a Canadá
