@@ -8,14 +8,14 @@ describe("Prueba de texto", ()=>{
         cy.visit(Cypress.env("baseUrl"))
         cy.url().should('include', Cypress.env("baseUrl"))
         
-        cy.get('div[class=category-cards] div:nth-child(1) div:nth-child(1) div:nth-child(3)').click({force:true})
+        cy.get('div[class=category-cards] div:nth-child(1) div:nth-child(1) div:nth-child(3)').click({force:true}) // Mala practica usar Xpath
     })
         it("ingresar datos a text Box",()=>{
-        const login = new LoginPO
+        const login = new LoginPO // Ajustar semantica. 
                       
         login.buttonText()
         login.fillName("Juan Guevara")
-        login.fillEmail("cdmdn@hotmail.com")
+        login.fillEmail("cdmdn@hotmail.com") // Agregar la data desde fixture. 
         login.fillCurrentaddress("Carrera 27 #17 b05")
         login.fillpermanentAddress("Carrera 27 #17 b05")
         login.submit()
