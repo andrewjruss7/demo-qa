@@ -2,5 +2,10 @@
   "name": "Juan Guevara",
   "email": "hello@cypress.io",
   "Adress": "Cra 27 #17 b05",
-  "rAdress": "Cra 27 #17 b05"
+  "rAdress": "Cra 27 #17 b05",
+
+  "nameFail": "111111",
+  "emailFail": "222222",
+  "AdressFail": "Cra 27 #17",
+  "rAdressFail": "Cra 27 b05"
 }

@@ -33,6 +33,14 @@ class LoginPO {
         const name= cy.get("#name")
         name.should("be.visible") 
     }
+    proveeEmail(value) {
+        const email= cy.get("#email")
+        email.should("be.visible") 
+    }
+    proveeAddress(value) {
+        const currentAddress= cy.get("CurrentAddress")
+        currentAddress.should("be.visible") 
+    }
 }
 
 export default LoginPO
