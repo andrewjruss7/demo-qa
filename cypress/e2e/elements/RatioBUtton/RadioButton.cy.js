@@ -1,6 +1,6 @@
 import RadioPO from "./RadioButton"
 
-describe("RadioButton test", () =>{
+describe("Pruebas del elemento Radio botón", () =>{
     Cypress.on('uncaught:exception', (err, runnable) => {
     return false
     })
