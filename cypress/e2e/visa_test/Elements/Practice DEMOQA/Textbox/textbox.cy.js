@@ -10,42 +10,11 @@ describe('Test Textbox', () => {
         cy.get('.main-header').should('have.text', 'Elements')
 
         cy.get('#item-0').click()
-<<<<<<< HEAD
-
-        
-
-
-    })
-
-    
-=======
     }) 
->>>>>>> 210106c1f41a9a9f63acdd5fb16dd28f7551b914
 
 
     it('Textbox test', () => {
 
-<<<<<<< HEAD
-       Cypress.on('uncaught:exception', (err, runnable) => {
-            return false
-        })
-
-        cy.fixture('textBoxData.json').as('userData')
-        console.log('userData')
-
-     const inputText = new Textbox() ; // Debes cambiar el nombre de la variable, para tener buenas practicas en la semantica. 
-            inputText.inputFullName(this.userData.name)      // Agrega estos valores desde el fixture
-            inputText.inputEmail(this.userData.email)          
-            inputText.inputCurrentAddress(this.userData.address)          
-            inputText.inputPermanentAddress(this.userData.padress)           
-            inputText.submitBtn()
-            
-            cy.get('#name').should('be.visible')
-            cy.get('#email').should('be.visible')
-            cy.get('#currentAddress').should('be.visible')
-            cy.get('#permanentAddress').should('be.visible')
-    
-=======
         const credentials = require('../../../../../fixtures/textBoxData.json')
         const inputText = new Textbox()  
 
@@ -69,5 +38,4 @@ describe('Test Textbox', () => {
      
      })
      
->>>>>>> 210106c1f41a9a9f63acdd5fb16dd28f7551b914
     })
