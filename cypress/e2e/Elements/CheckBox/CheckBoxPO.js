@@ -65,4 +65,4 @@ class CheckBoxPO{
     }
 }
 
-export default TextBoxPO;
+export default CheckBoxPO;
