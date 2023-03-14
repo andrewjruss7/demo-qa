@@ -10,7 +10,6 @@ describe('CheckBox trial', () =>{
         })
         cy.get('h5').contains('Elements').click();
         cy.get('#item-1').click();
-        //cy.get('.rct-option-expand-all').click();#tree-node > ol > li > span > button
 
         cy.get('.rct-collapse-btn').eq(0).click();
         cy.get('.rct-collapse-btn').eq(1).click();

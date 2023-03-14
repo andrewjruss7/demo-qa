@@ -18,13 +18,13 @@ describe("Buttons trial",  () => {
         buttonsPO.btnButtonMtd().click();
 
         buttonsPO.btnDoubleClickMtd().dblclick();
-        buttonsPO.doubleClickMessageMtd().contains('You have done a double click');
+        buttonsPO.doubleClickMessageMtd().should('contain','You have done a double click')
 
         buttonsPO.btnRightClickMtd().rightclick();
-        buttonsPO.rightClickMessageMtd().contains('You have done a right click');
+        buttonsPO.rightClickMessageMtd().should('contain','You have done a right click')
 
         buttonsPO.btnClickMtd().click();
-        buttonsPO.dynamicClickMessageMtd().contains('You have done a dynamic click');
+        buttonsPO.dynamicClickMessageMtd().should('contain','You have done a dynamic click')
           
 
     })

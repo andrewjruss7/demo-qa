@@ -1,6 +1,8 @@
 import UDPO from "./UploadDownloadPO";
+import 'cypress-file-upload';
 
-const up = new UDPO();
+const ud = new UDPO();
+const image = 'image.jpg'
 
 describe('Download and Upload trial', () => {
 
@@ -14,13 +16,13 @@ describe('Download and Upload trial', () => {
         Cypress.on('uncaught:exception', (err, runnable) =>{
             return false
         })
-        up.textH5Mtd().click();
-        up.btnUDMtd().click();
+        ud.textH5Mtd().click();
+        ud.btnUDMtd().click();
 
-        up.btnDownloadMtd().click();
-        cy.readFile('path/to/downloaded/file').should('exist')
+        //ud.btnDownloadMtd().click();
 
-
+        ud.btnUploadMtd().attachFile(image);
+        ud.assertFilePathMtd(image);
         
     })
 })

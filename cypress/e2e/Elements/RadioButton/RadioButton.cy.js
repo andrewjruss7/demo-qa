@@ -16,15 +16,13 @@ describe("RadioButton trial",() => {
         radioButton.textH5Mtd().click();
         radioButton.btnRadioButtonMtd().click();
 
-        radioButton.yesRadioMtd().check({force:true});
-        radioButton.yesRadioMtd().should('be.checked');
-        radioButton.spanTextSuccessMtd().contains('Yes');
-        radioButton.noRadioMtd().should('be.disabled');
-
-        radioButton.impressiveRadioMtd().check({force:true});
-        radioButton.impressiveRadioMtd().should('be.checked');
-        radioButton.spanTextSuccessMtd().contains('Impressive');
+        radioButton.yesRadioMtd().check({force:true})
         radioButton.noRadioMtd().should('be.disabled')
+        radioButton.assertSpanTextMtd('Yes')
+
+        radioButton.impressiveRadioMtd().check({force:true})
+        radioButton.noRadioMtd().should('be.disabled')
+        radioButton.assertSpanTextMtd('Impressive')
     })
 
 })

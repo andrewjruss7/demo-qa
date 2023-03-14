@@ -7,7 +7,7 @@ class WebTablesPO{
         spanSearch : () => cy.get('#basic-addon2'),
         txtSearchBox : () => cy.get('#searchBox'),
         ReactTable : () => cy.get('.ReactTable'),
-        Row : () => cy.get('.rt-tr-group'),
+        Row : () => cy.get('.rt-tr-group').eq(3),
         btnEdit : () => cy.get('#edit-record-4'),
         btnDelete : () => cy.get('#delete-record-4'),
         txtFirstName : () => cy.get('#firstName'),
@@ -17,7 +17,6 @@ class WebTablesPO{
         txtSalary : () => cy.get('#salary'),
         txtDepartment : () => cy.get('#department'),
         btnSubmit : () => cy.get('#submit')
-
     }
 
     btnWebTableMtd(){
@@ -82,6 +81,14 @@ class WebTablesPO{
 
     btnSubmitMtd(){
         return this.elements.btnSubmit();
+    }
+
+    Asserts = {
+        assertRow : () => this.RowMtd()
+    }
+
+    assertRowMtd(item){
+        return this.Asserts.assertRow().should('contain', item)
     }
 }
 
