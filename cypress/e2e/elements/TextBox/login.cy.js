@@ -5,10 +5,7 @@ describe("Prueba de texto", ()=>{
         return false
     })
         beforeEach(()=>{
-        cy.visit(Cypress.env("baseUrl"))
-        cy.url().should('include', Cypress.env("baseUrl"))
-        
-        cy.get('h5').contains('Elements').click({force:true})
+        cy.DemoQA()
     })/*  
         it("ingresar datos correctamente a text Box",()=>{
         const TextBox = new LoginPO

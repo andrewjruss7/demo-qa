@@ -5,21 +5,27 @@ describe("Prueba de caja", ()=>{
         return false
     })
     beforeEach(()=>{
-        cy.visit(Cypress.env("baseUrl"))
-        cy.url().should('include', Cypress.env("baseUrl"))
-        
-        cy.get('div[class=category-cards] div:nth-child(1) div:nth-child(1) div:nth-child(3)').click({force:true})
-    })
-    it("click a Check Box",()=>{
+        cy.DemoQA()
+        const check = new CheckPage
+        check.clickCheck()
+    }) 
+    /*it("Verficar que se checkeen todas por el home",()=>{
         const check = new CheckPage
 
-        check.buttonCheck()
-        check.toggle()
-        check.toggle2()
+        check.clickHomeToggle()
+        check.clickHomeCheck()
+    })*/
 
-    
-    
-    
+    it("desplegar carpetas y seleccionar documento NOTES",()=>{
+        const check = new CheckPage
+
+        check.clickHomeToggle()
+        check.clickDesktopToggle()
+        check.clickDocumentsToggle()
+        check.clickDownloadsToggle()
+        check.clickNotesCheck()
+        check.verifyResult()
+
     })
 
 })

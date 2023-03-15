@@ -1,5 +1,6 @@
 class Button 
-{
+{   
+    Buttons= '#item-4'
     Button2Click= "#doubleClickBtn"
     Answer2click= "#doubleClickMessage"
     ButtonRClick= "#rightClickBtn"
@@ -7,6 +8,9 @@ class Button
     Button1Click= "button.btn-primary"
     Answer1click= "#dynamicClickMessage"
 
+clickButtons(){
+    cy.get(this.Buttons).click({force:true})
+    }
 clickButton2Click(){
     cy.get(this.Button2Click).dblclick({force:true})
     cy.get(this.Answer2click).contains('You have done a double click')
