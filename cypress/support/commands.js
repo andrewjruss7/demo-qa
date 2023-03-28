@@ -3,8 +3,9 @@ Cypress.Commands.add("DemoQA", ()=>{
     cy.url().should('include', Cypress.env("baseUrl"))
     cy.get('h5').contains('Elements').click({force:true})
 })
-
-const mysql = require('mysql');
+require('cypress-downloadfile/lib/downloadFileCommand');
+require('cy-verify-downloads').addCustomCommand();
+/*const mysql = require('mysql');
 
 Cypress.Commands.add('queryDatabase', (query, params = []) => {
   const connection = mysql.createConnection({
@@ -26,7 +27,7 @@ Cypress.Commands.add('queryDatabase', (query, params = []) => {
       connection.end();
     });
   });
-});
+});*/
 
 
 
